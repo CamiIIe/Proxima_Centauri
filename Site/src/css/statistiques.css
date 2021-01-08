@@ -1,0 +1,150 @@
+/* Feuille CSS pour des paramètres globaux et la page d'acceuil */
+
+@charset "UTF-8";
+
+/* FONTS */
+@font-face {
+    font-family: "mastura";
+    src: url(../font/mastura/Mastura.ttf);
+}
+
+@font-face {
+    font-family: "lato";
+    src: url(../font/Lato-Light.ttf);
+}
+/* ----- */
+
+/*===== GLOBAL =====*/
+
+/* Paramètres pour animation de changements de page html */
+.animate-in {
+    -webkit-animation: fadeIn .5s ease-in;
+    animation: fadeIn .5s ease-in;
+}
+
+.animate-out {
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+    opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* ----- */
+
+html, body  {  
+overflow: hidden;  
+}  
+
+body {
+    color: white;
+    font-family: "lato";
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    /*Concerne le background*/
+    background-image: url(../img/IMGFondReduit.jpg);
+    background-size: cover;
+    -webkit-background-clip: cover; /*Pour les anciens navigateurs*/
+    background-position: center center; /*Centrer horizontal et vertical*/
+    background-repeat : no-repeat; 
+    min-height: 100vh;
+    min-width: 100vh;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ACCUEIL */
+
+.titre {
+    z-index: 0;
+    font-family: "mastura";
+    text-align: center;
+    font-size: 22vh;
+    margin-top: 40vh;
+    left : 8vw;
+    transform: translateY(-50%) translateX(-6%);
+    position : absolute; 
+}
+
+.subtitle {
+    font-size: 2.5vmax;
+    z-index: 2;
+    font-family: "lato";
+    text-align: center;
+    left: 1vw;
+    top: 52vh;
+    transform: translateY(-50%);
+    position: relative;
+    width: 40%;
+}
+
+.etoile {
+    z-index: 1;
+    transform: rotate(60deg);
+    float: left;
+    height: 40%;
+    width: 40%;
+    top: 30vh;
+    left: 40vh;
+    position: absolute;
+}
+
+#jouer {
+    display: none;
+    background-color: #F5E95D;
+    color: #3a3a3a;
+    opacity: 80%;
+    border-color: #F5E95D;
+}
+
+/* MAIN */
+
+#main {
+    margin: auto;
+    padding-top: 6%;
+    width: 300px;
+    height: 300px;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+    color: #000000;
+}
+
+#test {
+    margin-top: 2%;
+    border: #000000;
+    border-radius: 3px;
+}
+
+.titre img {
+    width: 80%;
+    height: 80%;
+}
+
+/* FOOTER */
+
+

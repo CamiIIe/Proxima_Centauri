@@ -608,11 +608,65 @@ function getParentheses(nbParenthese, signe) {
                     } else {
                         signe = String(element[0]+" "+element[1]+"("+"("+" "+element[2]+" "+")"+element[3]+" "+")"); 
                     }
+                } else {
+                    random = getRandomIntInclusive(1, 70); 
+
+                    if (random <= 5) {
+                        signe = String("("+"("+" "+element[0]+" "+")"+element[1]+" "+element[2]+" "+element[3]+" "+element[4]+" "+")"); 
+                    } else if (random <= 10 && random > 5) {
+                        signe = String("("+"("+" "+element[0]+" "+element[1]+" "+")"+element[2]+" "+element[3]+" "+element[4]+" "+")"); 
+                    } else if (random <= 15 && random > 10) {
+                        signe = String("("+"("+" "+element[0]+" "+element[1]+" "+element[2]+" "+")"+element[3]+" "+element[4]+" "+")"); 
+                    } else if (random <= 20 && random > 15) {
+                        signe = String("("+"("+" "+element[0]+" "+element[1]+" "+element[2]+" "+element[3]+" "+")"+element[4]+" "+")"); 
+                    } else if (random <= 25 && random > 20) {
+                        signe = String("("+" "+element[0]+"("+" "+element[1]+" "+")"+element[2]+" "+element[3]+" "+element[4]+" "+")"); 
+                    } else if (random <= 30 && random > 25) {
+                        signe = String("("+" "+element[0]+"("+" "+element[1]+" "+element[2]+" "+")"+element[3]+" "+element[4]+" "+")"); 
+                    } else if (random <= 35 && random > 30) {
+                        signe = String("("+" "+element[0]+"("+" "+element[1]+" "+element[2]+" "+element[3]+" "+")"+element[4]+")"); 
+                    } else if (random <= 40 && random > 35) {
+                        signe = String("("+" "+element[0]+"("+" "+element[1]+" "+element[2]+" "+element[3]+" "+element[4]+" "+")"+")"); 
+                    } else if (random <= 45 && random > 40) {
+                        signe = String("("+" "+element[0]+" "+element[1]+"("+" "+element[2]+" "+")"+element[3]+" "+element[4]+" "+")"); 
+                    } else if (random <= 50 && random > 45) {
+                        signe = String("("+" "+element[0]+" "+element[1]+"("+" "+element[2]+" "+element[3]+" "+")"+element[4]+" "+")"); 
+                    } else if (random <= 55 && random > 50) {
+                        signe = String("("+" "+element[0]+" "+element[1]+"("+" "+element[2]+" "+element[3]+" "+element[4]+" "+")"+")"); 
+                    } else if (random <= 60 && random > 55) {
+                        signe = String("("+" "+element[0]+" "+element[1]+" "+element[2]+"("+" "+element[3]+" "+")"+element[4]+" "+")"); 
+                    } else if (random <= 65 && random > 60) {
+                        signe = String("("+" "+element[0]+" "+element[1]+" "+element[2]+"("+" "+element[3]+" "+element[4]+" "+")"); 
+                    } else {
+                        signe = String("("+" "+element[0]+" "+element[1]+" "+element[2]+" "+element[3]+"("+" "+element[4]+" "+")"); 
+                    }
                 }
 
             }
 
+        case 3 : 
+            element = signe.split(" "); 
+            signe = " "; 
+            random = getRandomIntInclusive(1, 10); 
+            parentheseImbriques = parenthesesImbriques(nbParenthese); 
 
+            if (parentheseImbriques == false) {
+                if (element.length == 3) {
+                    parentheseImbriques == true; 
+                } else if (element.length == 4) {
+                    parentheseImbriques == true; 
+                } else {
+                    signe = String("("+" "+element[0]+" "+")"+element[2]+"("+" "+element[2]+" "+")"+element[3]+"("+" "+element[4]+" "+")"); 
+                }
+            } else {
+                if (element.length == 3) {
+                    signe = String("("+"("+" "+element[0]+" "+")"+element[2]+"("+" "+element[3]+" "+")"+")"); 
+                } else if (element.length == 4) {
+
+                } else {
+
+                }
+            }
             
     }
 }

@@ -169,11 +169,10 @@ function getSign(numNiveau) {
                 }
                 return signe; 
 
-        case 7: //Niveau 7 : Minimum de deux signes à quatres signes avec des priorités opératoires
+        case 7: //Niveau 7 : Minimum de deux signes à quatres signes avec des priorités opératoires et des parenthèses non-imbriqués
                 random = getRandomIntInclusive(1, 15); 
 
                 nbSigne = getNbSign(numNiveau); 
-                nbParenthese = nbParentheses(nbSigne); 
              
                 if (nbSigne == 2) {
                     if(random <= 7) {
@@ -206,7 +205,7 @@ function getSign(numNiveau) {
                     random2 = getRandomIntInclusive(1, 15); 
                     if (random2 <= 5) {
                         signe = String(signe +" "+ signes[0]); 
-                    } else if (random2 <= 10 && random > 5) {
+                    } else if (random2 <= 10 && random2 > 5) {
                         signe = String(signe +" "+ signes[1]);
                     } else {
                         signe = String(signe +" "+ signes[2]);
@@ -215,7 +214,7 @@ function getSign(numNiveau) {
                     random3 = getRandomIntInclusive(1, 15); 
                     if (random3 <= 5) {
                         signe = String(signe +" "+ signes[0]); 
-                    } else if (random3 <= 10 && random > 5) {
+                    } else if (random3 <= 10 && random3 > 5) {
                         signe = String(signe +" "+ signes[1]);
                     } else {
                         signe = String(signe +" "+ signes[2]);
@@ -232,7 +231,7 @@ function getSign(numNiveau) {
                     random2 = getRandomIntInclusive(1, 15); 
                     if (random2 <= 5) {
                         signe = String(signe +" "+ signes[0]); 
-                    } else if (random2 <= 10 && random > 5) {
+                    } else if (random2 <= 10 && random2 > 5) {
                         signe = String(signe +" "+ signes[1]);
                     } else {
                         signe = String(signe +" "+ signes[2]);
@@ -241,7 +240,7 @@ function getSign(numNiveau) {
                     random3 = getRandomIntInclusive(1, 15); 
                     if (random3 <= 5) {
                         signe = String(signe +" "+ signes[0]); 
-                    } else if (random3 <= 10 && random > 5) {
+                    } else if (random3 <= 10 && random3 > 5) {
                         signe = String(signe +" "+ signes[1]);
                     } else {
                         signe = String(signe +" "+ signes[2]);
@@ -250,14 +249,336 @@ function getSign(numNiveau) {
                     random4 = getRandomIntInclusive(1, 15); 
                     if (random4 <= 5) {
                         signe = String(signe +" "+ signes[0]); 
-                    } else if (random4 <= 10 && random > 5) {
+                    } else if (random4 <= 10 && random4 > 5) {
                         signe = String(signe +" "+ signes[1]);
                     } else {
                         signe = String(signe +" "+ signes[2]);
                     }
                 }
-    }
+                
+                nbParenthese = nbParentheses(nbSigne); 
+                signeAvecParenthese = getParentheses(nbParenthese, signe); 
+                return signeAvecParenthese; 
+            
+        case 8 : //Niveau 8 : Minimum de deux signes à quatres signes avec des priorités opératoires et des parenthèses imbriqués
+            random = getRandomIntInclusive(1, 15); 
+
+            nbSigne = getNbSign(numNiveau); 
+     
+            if (nbSigne == 2) {
+                if(random <= 7) {
+                    signe = String(signes[0]+" "+ signes[2]);
+                } else {
+                    signe = String (signes[1]+" "+ signes[2]); 
+                }   
+
+            } else if (nbSigne == 3) {
+                if (random <= 5) {
+                    signe = String(signes[0]);
+                } else if (random <= 10 && random > 5){
+                    signe = String(signes[1]);
+                } else {
+                    signe = String(signes[2]);
+                }
+
+                random2 = getRandomIntInclusive(1, 15); 
+                if (random2 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random2 <= 10 && random2 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random3 = getRandomIntInclusive(1, 15); 
+                if (random3 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random3 <= 10 && random3 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+            } else {
+                if (random <= 5) {
+                    signe = String(signes[0]);
+                } else if (random <= 10 && random > 5){
+                    signe = String(signes[1]);
+                } else {
+                    signe = String(signes[2]);
+                }
+
+                random2 = getRandomIntInclusive(1, 15); 
+                if (random2 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random2 <= 10 && random2 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random3 = getRandomIntInclusive(1, 15); 
+                if (random3 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random3 <= 10 && random3 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random4 = getRandomIntInclusive(1, 15); 
+                if (random4 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random4 <= 10 && random4 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+            }
+            
+            nbParenthese = nbParentheses(nbSigne); 
+            signeAvecParenthese = getParentheses(nbParenthese, signe); 
+            return signeAvecParenthese; 
+
+        case 9 : //Niveau 9 : Minimum de deux signes à cinq signes avec des priorités opératoires et des parenthèses imbriqués
+            random = getRandomIntInclusive(1, 15); 
+
+            nbSigne = getNbSign(numNiveau); 
+ 
+            if (nbSigne == 2) {
+                if(random <= 7) {
+                    signe = String(signes[0]+" "+ signes[2]);
+                } else {
+                    signe = String (signes[1]+" "+ signes[2]); 
+                }   
+
+            } else if (nbSigne == 3) {
+                if (random <= 5) {
+                    signe = String(signes[0]);
+                } else if (random <= 10 && random > 5){
+                    signe = String(signes[1]);
+                } else {
+                    signe = String(signes[2]);
+                }
+
+                random2 = getRandomIntInclusive(1, 15); 
+                if (random2 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random2 <= 10 && random2 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random3 = getRandomIntInclusive(1, 15); 
+                if (random3 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random3 <= 10 && random3 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+            } else if (nbSigne == 4) {
+                if (random <= 5) {
+                    signe = String(signes[0]);
+                } else if (random <= 10 && random > 5){
+                    signe = String(signes[1]);
+                } else {
+                    signe = String(signes[2]);
+                }
+
+                random2 = getRandomIntInclusive(1, 15); 
+                if (random2 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random2 <= 10 && random2 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random3 = getRandomIntInclusive(1, 15); 
+                if (random3 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random3 <= 10 && random3 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random4 = getRandomIntInclusive(1, 15); 
+                if (random4 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random4 <= 10 && random4 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+            } else {
+                if (random <= 5) {
+                    signe = String(signes[0]);
+                } else if (random <= 10 && random > 5){
+                    signe = String(signes[1]);
+                } else {
+                    signe = String(signes[2]);
+                }
+
+                random2 = getRandomIntInclusive(1, 15); 
+                if (random2 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random2 <= 10 && random2 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random3 = getRandomIntInclusive(1, 15); 
+                if (random3 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random3 <= 10 && random3 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random4 = getRandomIntInclusive(1, 15); 
+                if (random4 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random4 <= 10 && random4 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random5 = getRandomIntInclusive(1, 15); 
+                if (random <= 5) {
+                    signe = String(signe +" "+signes[0]); 
+                } else if (random5 <= 10 && random5 > 5) {
+                    signe = String(signe +" "+signes[1]); 
+                } else {
+                    signe = String(signe +" "+signes[2]);
+                }
+            }
+        
+            nbParenthese = nbParentheses(nbSigne); 
+            signeAvecParenthese = getParentheses(nbParenthese, signe); 
+            return signeAvecParenthese; 
+
+        case 10 :  //Niveau 10 : Minimum de trois signes à quatres signes avec des priorités opératoires et des parenthèses imbriqués
+            random = getRandomIntInclusive(1, 15); 
+
+            nbSigne = getNbSign(numNiveau); 
+
+            if (nbSigne == 3) {
+                if (random <= 5) {
+                    signe = String(signes[0]);
+                } else if (random <= 10 && random > 5){
+                    signe = String(signes[1]);
+                } else {
+                    signe = String(signes[2]);
+                }
+
+            random2 = getRandomIntInclusive(1, 15); 
+                if (random2 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random2 <= 10 && random2 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+            random3 = getRandomIntInclusive(1, 15); 
+                if (random3 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random3 <= 10 && random3 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+            } else if (nbSigne == 4) {
+                if (random <= 5) {
+                    signe = String(signes[0]);
+                } else if (random <= 10 && random > 5){
+                    signe = String(signes[1]);
+                } else {
+                    signe = String(signes[2]);
+                }
+
+                random2 = getRandomIntInclusive(1, 15); 
+                if (random2 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random2 <= 10 && random2 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random3 = getRandomIntInclusive(1, 15); 
+                if (random3 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random3 <= 10 && random3 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random4 = getRandomIntInclusive(1, 15); 
+                if (random4 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random4 <= 10 && random4 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+            } else {
+                if (random <= 5) {
+                    signe = String(signes[0]);
+                } else if (random <= 10 && random > 5){
+                    signe = String(signes[1]);
+                } else {
+                    signe = String(signes[2]);
+                }
+
+                random2 = getRandomIntInclusive(1, 15); 
+                if (random2 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random2 <= 10 && random2 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random3 = getRandomIntInclusive(1, 15); 
+                if (random3 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random3 <= 10 && random3 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random4 = getRandomIntInclusive(1, 15); 
+                if (random4 <= 5) {
+                    signe = String(signe +" "+ signes[0]); 
+                } else if (random4 <= 10 && random4 > 5) {
+                    signe = String(signe +" "+ signes[1]);
+                } else {
+                    signe = String(signe +" "+ signes[2]);
+                }
+
+                random5 = getRandomIntInclusive(1, 15); 
+                if (random <= 5) {
+                    signe = String(signe +" "+signes[0]); 
+                } else if (random5 <= 10 && random5 > 5) {
+                    signe = String(signe +" "+signes[1]); 
+                } else {
+                    signe = String(signe +" "+signes[2]);
+                }
+            }
     
+            nbParenthese = nbParentheses(nbSigne); 
+            signeAvecParenthese = getParentheses(nbParenthese, signe); 
+            return signeAvecParenthese; 
+        }
 }
 
 //Fonction permettant de tirer un nombre aléatoire entre 0 et 9
@@ -266,11 +587,7 @@ function getNumber() {
 }
 
 //Fonction permettant de déterminer le nom de questions/ calculs à poser en fonction du niveau
-function getNbQuest(numNiveau) {
-    var count = 0; 
 
-
-}
 
 /*Fonction permettant de déterminer le nombre de signes du calcul qui retourne le nb de signes 
 du calcul */
@@ -353,8 +670,9 @@ function getNbSign(numNiveau) {
 
 /*Fonction qui vérifie qu'il y a le même nombre de parenthèses ouvrantes et fermantes dans 
 le calcul affiché sur la page HTML */
-function verifParenthese() {
-    var calcul = document.getElementById("demo").innerHTML; 
+function verifParenthese(signe) {
+    //var calcul = document.getElementById("demo").innerHTML; 
+    calcul = String(signe); 
 
     nb1 = 0;
     nb2 = 0; 
@@ -402,6 +720,9 @@ function verifParenthese() {
     //document.write(Array.toString(tab1) + " " + Array.toString(tab2)); 
     return ver; 
 }
+
+//Fonction qui vérifie que le nombre de couple de parenthèses correspond bien aux nombre de parenthèses de l'équation
+
 
 /* Fonction qui détermine le nombre de couple de parenthèses dans le calcul */ 
 function nbParentheses(nbSigne) {
@@ -492,6 +813,7 @@ function parenthesesImbriques(nbParenthese) {
                 reponse = true; 
             }
             return reponse; 
+
     }
 }
 
@@ -641,8 +963,8 @@ function getParentheses(nbParenthese, signe) {
                         signe = String("("+" "+element[0]+" "+element[1]+" "+element[2]+" "+element[3]+"("+" "+element[4]+" "+")"); 
                     }
                 }
-
             }
+            return signe; 
 
         case 3 : 
             element = signe.split(" "); 
@@ -650,6 +972,7 @@ function getParentheses(nbParenthese, signe) {
             random = getRandomIntInclusive(1, 10); 
             parentheseImbriques = parenthesesImbriques(nbParenthese); 
 
+            //A vérifier si le changement de la condition parenthèseImbriqués est bien fait pour ce code
             if (parentheseImbriques == false) {
                 if (element.length == 3) {
                     parentheseImbriques == true; 
@@ -662,11 +985,51 @@ function getParentheses(nbParenthese, signe) {
                 if (element.length == 3) {
                     signe = String("("+"("+" "+element[0]+" "+")"+element[2]+"("+" "+element[3]+" "+")"+")"); 
                 } else if (element.length == 4) {
+                    random = getRandomIntInclusive(1, 20); 
 
+                    if (random <= 5) {
+                        signe = String("("+"("+" "+element[0]+" "+")"+element[1]+"("+" "+element[2]+" "+")"+element[3]+" "+")"); 
+                    } else if (random <= 10 && random > 5 ) {
+                        signe = String("("+" "+element[0]+"("+" "+element[1]+" "+")"+element[2]+"("+" "+element[3]+" "+")"); 
+                    } else if (random <= 15 && random > 10) {
+                        signe = String("("+"("+" "+element[0]+" "+element[1]+" "+")"+element[2]+"("+" "+element[3]+" "+")"+")"); 
+                    } else {
+                        signe = String("("+"("+" "+element[0]+" "+")"+element[1]+"("+" "+element[2]+" "+element[3]+" "+")"+")"); 
+                    }
                 } else {
+                   random = getRandomIntInclusive(1, 25); 
 
+                   if (random <= 5) {
+                       signe = String("("+"("+" "+element[0]+" "+")"+element[1]+"("+" "+element[2]+" "+")"+element[3]+" "+element[4]+" "+")"); 
+                   } else if (random <= 10 && random > 5) {
+                       signe = String("("+"("+" "+element[0]+" "+")"+element[1]+" "+element[2]+"("+" "+element[3]+" "+")"+element[4]+" "+")"); 
+                   } else if (random <= 15 && random > 10) {
+                       signe = String("("+"("+" "+element[0]+" "+")"+element[1]+" "+element[2]+" "+element[3]+"("+" "+element[4]+" "+")"+")"); 
+                   } else if (random <= 20 && random > 15) {
+                       signe = String("("+"("+" "+element[0]+" "+element[1]+" "+")"+element[2]+" "+element[3]+"("+" "+element[4]+" "+")"); 
+                   } else {
+                        signe = String("("+"("+" "+element[0]+" "+element[1]+" "+element[2]+" "+")"+element[3]+"("+" "+element[4]+" "+")"); 
+                   }
                 }
             }
+        return signe; 
+
+        case 4 : 
+            element = signe.split(" "); 
+            signe = " "; 
+            random = getRandomIntInclusive(1, 10); 
+            parentheseImbriques = parenthesesImbriques(nbParenthese); 
+
+            if (parentheseImbriques == false) {
+                //if (element.length == 5) {
+                //Ne précise pas la condition car il n'y a 4 couples de parenthèses que à la condition qu'il y a 5  signes dans le calcul 
+                    parentheseImbriques = true; 
+                //}
+            } else {
+                signe = String("("+"("+" "+element[0]+" "+")"+element[1]+"("+" "+element[2]+" "+")"+element[3]+"("+" "+element[4]+" "+")"+")"); 
+            }
+
+        return signe; 
             
     }
 }

@@ -4,14 +4,14 @@ Merge de l'ensemble de nos travaux personnels dans la branche main et résolutio
 
 ## Habib ##  
 
-### Objectifs urgents ##  
+### Objectifs urgents ###  
 
 * Homogénéisation / Modifications des pages comptes, infos persos et statistiques
 * Création de la page des badge
 
 ## Raphaël ##  
 
-### Objectifs urgents ##
+### Objectifs urgents ###
 
 * Transformer les pages à propos et remerciement en bootstrap
 * Création de la page pour le mot de passe oublié
@@ -25,13 +25,13 @@ Merge de l'ensemble de nos travaux personnels dans la branche main et résolutio
 
 ## Camille ##  
 
-### Objectifs urgents ##
+### Objectifs urgents ###
 
 * Finir le jeu de calcul astronomique
 * Reprendre la page index pour que l'icône remerciement apparaisse sur tout les écrans
 * Agrandir le schéma index
 * Diminuer la taille des divisions pour les textes des pages à propos et remerciements
 
-### Non impératifs ##
+### Non impératifs ###
 
 * Création d'une identité visuelle pour les mails envoyés

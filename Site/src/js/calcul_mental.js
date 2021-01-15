@@ -73,7 +73,10 @@ function getRandomIntInclusive(min, max) {
 
 //Fonction permettant de retourner un signe selon le niveau actuel où en est l'utilisateur
 function getSign(numNiveau) {
-    signes = ["+","-","*"];
+    let signes = ["+", "-", "*"];
+    let random, signe, random2, random3, random4, random5;
+    let nbSigne, nbParenthese, signeAvecParenthese;
+
     switch (numNiveau) {
         case 1: //Niveau 1 : 70% d'avoir une addition et 30% d'avoir une soustraction
             random = getRandomIntInclusive(1, 10);
@@ -129,7 +132,7 @@ function getSign(numNiveau) {
                 random = getRandomIntInclusive(1, 10); 
                 nbSigne = getNbSign(numNiveau); 
 
-                if (nbSigne == 1) {
+                if (nbSigne === 1) {
                     if(random <= 2.5) {
                         signe = String(signes[0]);
                     } else if (random <= 5 && random > 2.5) {
@@ -154,7 +157,7 @@ function getSign(numNiveau) {
 
                 nbSigne = getNbSign(numNiveau); 
         
-                if (nbSigne == 2) {
+                if (nbSigne === 2) {
                     if(random <= 5) {
                         signe = String(signes[0]+" "+ signes[2]);
                     } else {
@@ -174,26 +177,13 @@ function getSign(numNiveau) {
 
                 nbSigne = getNbSign(numNiveau); 
              
-                if (nbSigne == 2) {
+                if (nbSigne === 2) {
                     if(random <= 7) {
                         signe = String(signes[0]+" "+ signes[2]);
                     } else {
-                        signe = String (signes[1]+" "+ signes[2]); 
+                        signe = String (signes[1]+" "+ signes[2]);
                     }
-
-                    //Appel de la fonction pour ajouter les parenthèses ?!
-                    /*
-                    if (nbParenthese == 1) {
-                        element = signe.split(" "); 
-
-                        if (random <= 7) {
-                            signe = String("(" + " " + element[0] + " " + ")" + element[1]); 
-                        } else {
-                            signe = String(element[0] + " " + "(" + " " + element[1] + " " + ")");
-                        }
-                    }
-                    */
-                } else if (nbSigne == 3) {
+                } else if (nbSigne === 3) {
                     if (random <= 5) {
                         signe = String(signes[0]);
                     } else if (random <= 10 && random > 5){
@@ -204,7 +194,7 @@ function getSign(numNiveau) {
 
                     random2 = getRandomIntInclusive(1, 15); 
                     if (random2 <= 5) {
-                        signe = String(signe +" "+ signes[0]); 
+                        signe = String(signe +" "+ signes[0]);
                     } else if (random2 <= 10 && random2 > 5) {
                         signe = String(signe +" "+ signes[1]);
                     } else {
@@ -265,14 +255,14 @@ function getSign(numNiveau) {
 
             nbSigne = getNbSign(numNiveau); 
      
-            if (nbSigne == 2) {
+            if (nbSigne === 2) {
                 if(random <= 7) {
                     signe = String(signes[0]+" "+ signes[2]);
                 } else {
                     signe = String (signes[1]+" "+ signes[2]); 
                 }   
 
-            } else if (nbSigne == 3) {
+            } else if (nbSigne === 3) {
                 if (random <= 5) {
                     signe = String(signes[0]);
                 } else if (random <= 10 && random > 5){
@@ -344,14 +334,14 @@ function getSign(numNiveau) {
 
             nbSigne = getNbSign(numNiveau); 
  
-            if (nbSigne == 2) {
+            if (nbSigne === 2) {
                 if(random <= 7) {
                     signe = String(signes[0]+" "+ signes[2]);
                 } else {
                     signe = String (signes[1]+" "+ signes[2]); 
                 }   
 
-            } else if (nbSigne == 3) {
+            } else if (nbSigne === 3) {
                 if (random <= 5) {
                     signe = String(signes[0]);
                 } else if (random <= 10 && random > 5){
@@ -377,7 +367,7 @@ function getSign(numNiveau) {
                 } else {
                     signe = String(signe +" "+ signes[2]);
                 }
-            } else if (nbSigne == 4) {
+            } else if (nbSigne === 4) {
                 if (random <= 5) {
                     signe = String(signes[0]);
                 } else if (random <= 10 && random > 5){
@@ -467,7 +457,7 @@ function getSign(numNiveau) {
 
             nbSigne = getNbSign(numNiveau); 
 
-            if (nbSigne == 3) {
+            if (nbSigne === 3) {
                 if (random <= 5) {
                     signe = String(signes[0]);
                 } else if (random <= 10 && random > 5){
@@ -494,7 +484,7 @@ function getSign(numNiveau) {
                     signe = String(signe +" "+ signes[2]);
                 }
 
-            } else if (nbSigne == 4) {
+            } else if (nbSigne === 4) {
                 if (random <= 5) {
                     signe = String(signes[0]);
                 } else if (random <= 10 && random > 5){
@@ -581,9 +571,66 @@ function getSign(numNiveau) {
         }
 }
 
-//Fonction permettant de tirer un nombre aléatoire entre 0 et 9
-function getNumber() {
-    return String(getRandomIntInclusive(0,9));
+//Fonction permettant de tirer UN nombre aléatoire en fonction des niveaux du jeu
+//Operation est une variable qui donne le signe qui sera entouré par les nombres générés
+function getNumber(numNiveau, operation) {
+    let nombre;
+
+    switch(numNiveau) {
+        case 1 :
+            //Etendue des nombres entre 1 à 10 pour addition et soustraction
+            nombre = getRandomIntInclusive(1, 10);
+            return nombre;
+
+        case 2 :
+            //Etendue des nombres entre 1 à 20 pour addition et soustraction
+            nombre = getRandomIntInclusive(1, 20);
+            return nombre;
+
+        case 3 :
+            //Etendue des nombres entre 11 et 30 pour addition et soustraction
+            //Etendue des nombres entre 1 et 20 pour multiplication
+            if (operation === "multiplication") {
+                nombre = getRandomIntInclusive(1, 10);
+                return nombre;
+            } else {
+                nombre = getRandomIntInclusive(11, 30);
+                return nombre;
+            }
+
+        case 4 :
+            //Etendue des nombres entre 11 et 50 pour addition et soustraction
+            //Etendue des nombres entre 1 et 20 pour multiplication
+            if (operation === "multiplication") {
+                nombre = getRandomIntInclusive(1, 20);
+                return nombre;
+            } else {
+                nombre = getRandomIntInclusive(11, 50);
+                return nombre;
+            }
+
+        case 5 :
+            //Etendue des nombres entre 50 et 100 pour addition et soustraction
+            //Etendue des nombres entre 11 et 50 pour multiplication
+            if (operation === multiplication) {
+                nombre = getRandomIntInclusive(50, 100);
+                return nombre;
+            } else {
+                nombre = getRandomIntInclusive(11, 50);
+                return nombre;
+            }
+
+        case 6 :
+            //Etendue des nombres entre 100 et 1000 pour addition et soustraction
+            //Etendue des nombres entre 11 et 70 pour multiplication
+            if (operation === "multiplication") {
+                nombre = getRandomIntInclusive(11, 70);
+                return nombre;
+            } else {
+                nombre = getRandomIntInclusive(100, 1000);
+                return nombre;
+            }
+    }
 }
 
 //Fonction permettant de déterminer le nom de questions/ calculs à poser en fonction du niveau
@@ -592,9 +639,11 @@ function getNumber() {
 /*Fonction permettant de déterminer le nombre de signes du calcul qui retourne le nb de signes 
 du calcul */
 function getNbSign(numNiveau) {
+    let random, nbSigne;
+
     switch(numNiveau) {
         case 5: //Niveau 5 : 80% de chances d'avoir un calcul à un seul signe 
-            random = getRandomIntInclusive(1, 10); 
+            random = getRandomIntInclusive(1, 10);
 
             if (random <= 8) {
                 nbSigne = 1; 
@@ -668,21 +717,20 @@ function getNbSign(numNiveau) {
     }
 }
 
-/*Fonction qui vérifie qu'il y a le même nombre de parenthèses ouvrantes et fermantes dans 
-le calcul affiché sur la page HTML */
+/*Fonction qui vérifie qu'il y a le même nombre de parenthèses ouvrantes et fermantes dans le calcul affiché sur la page HTML */
 function verifParenthese(signe) {
     //var calcul = document.getElementById("demo").innerHTML; 
-    calcul = String(signe); 
+    let calcul = String(signe);
 
-    nb1 = 0;
-    nb2 = 0; 
-    ver = false; 
+    let nb1 = 0;
+    let nb2 = 0;
+    let ver = false;
 
-    for(i = 0; i < calcul.length; i++) {
-        if (calcul.charAt(i) == '(') {
+    for(let i = 0; i < calcul.length; i++) {
+        if (calcul.charAt(i) === '(') {
             nb1++; 
         }
-        if (calcul.charAt(i) == ')') {
+        if (calcul.charAt(i) === ')') {
             nb2++; 
         }
     }
@@ -693,36 +741,62 @@ function verifParenthese(signe) {
     var tab2 = []; 
     tab2.length = nb2; 
     
-    n1 = 0; 
-    n2 = 0; 
+    let n1 = 0;
+    let n2 = 0;
 
-    for(j = 0; j < calcul.length; j++) {
-        if (calcul.charAt(j) == '(') {
+    for(let j = 0; j < calcul.length; j++) {
+        if (calcul.charAt(j) === '(') {
             tab1[n1] = calcul.indexOf('(', j); 
             n1++; 
         }
-        if (calcul.charAt(j) == ')') {
+        if (calcul.charAt(j) === ')') {
             tab2[n2] = calcul.indexOf(')', j); 
             n2++; 
         }
     }
 
-    if (nb1 == nb2) {
-        for(x = 0; x < tab1.length; x++) {
+    if (nb1 === nb2) {
+        for(let x = 0; x < tab1.length; x++) {
+            //ver = tab1[x] < tab2[x];
             if (tab1[x] < tab2[x]) {
-                ver = true; 
+                ver = true;
             } else {
-                ver = false; 
+                ver = false;
             }
         }
     }
     /* Vérifie la position des parenthèses en les affichant dans un tableau à l'écran */
-    //document.write(Array.toString(tab1) + " " + Array.toString(tab2)); 
+    //document.write(Array.toString(tab1) + " " + Array.toString(tab2));
+    //Renvoie true si bien une parenthèse ouvrante avant une parenthèse fermante
     return ver; 
 }
 
 //Fonction qui vérifie que le nombre de couple de parenthèses correspond bien aux nombre de parenthèses de l'équation
+function verifNbParenthese(signe, nbParenthese) {
+    let calcul = String(signe);
 
+    let nb1 = 0;
+    let nb2 = 0;
+    let ver = false;
+
+    //Compte le nb de paranthèse ouvrantes nb1 et fermantes nb2
+    for(let i = 0; i < calcul.length; i++) {
+        if (calcul.charAt(i) === '(') {
+            nb1++;
+        }
+        if (calcul.charAt(i) === ')') {
+            nb2++;
+        }
+    }
+
+    //Vérifie que le nombre de parenthèses ouvrantes et fermantes correspond au nombre de couple de parenthèses souhaités
+    if (nb1 === nb2) {
+        if (nbParenthese === nb1 || nbParenthese === nb2) {
+            ver = true;
+        }
+    }
+    return ver;
+}
 
 /* Fonction qui détermine le nombre de couple de parenthèses dans le calcul */ 
 function nbParentheses(nbSigne) {
@@ -787,10 +861,11 @@ function parenthesesImbriques(nbParenthese) {
         case 2 : 
             random = getRandomIntInclusive(1, 10); 
 
+            //reponse = random > 5; ??
             if (random <= 5) {
-                reponse = false; 
+                reponse = false;
             } else {
-                reponse = true; 
+                reponse = true;
             }
             return reponse; 
 
@@ -829,7 +904,7 @@ function getParentheses(nbParenthese, signe) {
             element = signe.split(" "); 
             signe = " "; 
 
-            if (element.length == 2) {
+            if (element.length === 2) {
                 random = getRandomIntInclusive(1, 10); 
 
                 if (random <= 5) {
@@ -837,7 +912,7 @@ function getParentheses(nbParenthese, signe) {
                 } else {
                     signe = String(element[0]+"("+" "+element[1]+" "+")"); 
                 }
-            } else if (element.length == 3) {
+            } else if (element.length === 3) {
                 random2 = getRandomIntInclusive(1, 15); 
 
                 if (random <= 5) {
@@ -868,11 +943,11 @@ function getParentheses(nbParenthese, signe) {
             random = getRandomIntInclusive(1, 10); 
             parentheseImbriques = parenthesesImbriques(nbParenthese); 
 
-            if (parenthesesImbriques == false) {
-                if (element.length == 3) {
+            if (parenthesesImbriques === false) {
+                if (element.length === 3) {
                     signe = String("("+" "+element[0]+" "+")"+element[1]+"("+" "+element[2]+" "+")"); 
 
-                } else if (element.length == 4) {
+                } else if (element.length === 4) {
                     random = getRandomIntInclusive(1, 15); 
 
                     if (random <= 5) {
@@ -900,7 +975,7 @@ function getParentheses(nbParenthese, signe) {
                    }
                 }
             } else {
-                if (element.length == 3) {
+                if (element.length === 3) {
                     random = getRandomIntInclusive(1, 20); 
 
                     if (random <= 5) {
@@ -912,7 +987,7 @@ function getParentheses(nbParenthese, signe) {
                     } else {
                         signe = String(element[0]+" "+"("+"("+" "+element[1]+" "+")"+element[2]+" "+")"); 
                     }
-                } else if (element.length == 4) {
+                } else if (element.length === 4) {
                     random = getRandomIntInclusive(1, 35); 
 
                     if (random <= 5) {
@@ -973,18 +1048,18 @@ function getParentheses(nbParenthese, signe) {
             parentheseImbriques = parenthesesImbriques(nbParenthese); 
 
             //A vérifier si le changement de la condition parenthèseImbriqués est bien fait pour ce code
-            if (parentheseImbriques == false) {
-                if (element.length == 3) {
-                    parentheseImbriques == true; 
-                } else if (element.length == 4) {
-                    parentheseImbriques == true; 
+            if (parentheseImbriques === false) {
+                if (element.length === 3) {
+                    parentheseImbriques === true;
+                } else if (element.length === 4) {
+                    parentheseImbriques === true;
                 } else {
                     signe = String("("+" "+element[0]+" "+")"+element[2]+"("+" "+element[2]+" "+")"+element[3]+"("+" "+element[4]+" "+")"); 
                 }
             } else {
-                if (element.length == 3) {
+                if (element.length === 3) {
                     signe = String("("+"("+" "+element[0]+" "+")"+element[2]+"("+" "+element[3]+" "+")"+")"); 
-                } else if (element.length == 4) {
+                } else if (element.length === 4) {
                     random = getRandomIntInclusive(1, 20); 
 
                     if (random <= 5) {
@@ -1020,7 +1095,7 @@ function getParentheses(nbParenthese, signe) {
             random = getRandomIntInclusive(1, 10); 
             parentheseImbriques = parenthesesImbriques(nbParenthese); 
 
-            if (parentheseImbriques == false) {
+            if (parentheseImbriques === false) {
                 //if (element.length == 5) {
                 //Ne précise pas la condition car il n'y a 4 couples de parenthèses que à la condition qu'il y a 5  signes dans le calcul 
                     parentheseImbriques = true; 
@@ -1028,9 +1103,7 @@ function getParentheses(nbParenthese, signe) {
             } else {
                 signe = String("("+"("+" "+element[0]+" "+")"+element[1]+"("+" "+element[2]+" "+")"+element[3]+"("+" "+element[4]+" "+")"+")"); 
             }
-
-        return signe; 
-            
+        return signe;
     }
 }
 

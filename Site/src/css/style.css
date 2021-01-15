@@ -64,7 +64,7 @@ body {
     /*Concerne le background*/
     background-image: url(../img/IMGFondReduit.jpg);
     background-size: cover;
-    -webkit-background-clip: cover; /*Pour les anciens navigateurs*/
+    /*-webkit-background-clip: cover; /*Pour les anciens navigateurs */
     background-position: center center; /*Centrer horizontal et vertical*/
     background-repeat : no-repeat; 
     min-height: 100vh;
@@ -227,7 +227,7 @@ li {
     */
 }
 
-.old{color : green;}; 
+.old{color : green;}
 
 /* Remerciements */ 
 .astronautBIS img {

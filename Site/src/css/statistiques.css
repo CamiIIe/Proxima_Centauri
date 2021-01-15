@@ -145,6 +145,20 @@ li {
     height: 80%;
 }
 
+.stats{
+    text-align: center;
+    margin-top: 0px;
+}
+
+.légendes{
+    margin-bottom: -70px;
+}
+
+.test{
+    margin-top: 50px;
+    background-color: black;
+}
+
 /* FOOTER */
 
 

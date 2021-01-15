@@ -59,3 +59,12 @@ body {
  .Menuderoulant li:hover .sousmenu {
  	display: block;
  }
+
+ .titre img {
+ 	width: 50%;
+ }
+ .titre {
+ 	position: absolute;
+ 	margin-top: 25%;
+ }
+ 

@@ -113,6 +113,17 @@ li {
     position: absolute;
 }
 
+.tb{
+    background-color: black;
+    
+}
+
+.infos{   
+    text-align: center;
+    margin-top: 10%;
+}
+
+
 #jouer {
     display: none;
     background-color: #F5E95D;

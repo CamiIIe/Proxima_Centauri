@@ -106,9 +106,9 @@
                         if (isset($_GET ["pasenregistre"])) echo "Erreur : Pas enregistré.";
                         if (isset($_GET ["emailnonvalide"])) echo "Cette adresse e-mail est non valide.";
                         if (isset($_GET ["pseudoconnu"])){
-                            echo 'Ce pseudo est déjà utilisé. <input type = "submit" name = "oublimdp" value = "Mot de passe oublié ?" />';};
+                            echo 'Ce pseudo est déjà utilisé. <a href="oubliMdp.php?oublimdp=1">Mot de passe oublié ?</a>';};
                         if (isset($_GET ["emailconnu"])){
-                            echo 'Cet e-mail est déjà utilisé. <input type = "submit" name = "oublimdp" value = "Mot de passe oublié ?" />';};
+                            echo 'Cet e-mail est déjà utilisé. <a href="oubliMdp.php?oublimdp=1">Mot de passe oublié ?</a>';};
                         if (isset($_GET ["ok"])){
                             echo 'Inscription réussie !';
                         }
@@ -145,7 +145,7 @@
                     <span>or use your account</span> -->
                     <input type="text" placeholder="Pseudo" name="pseudo" />
                     <input type="password" placeholder="Mot de passe" name="motDePasse" />
-                    <a href="#">Mot de passe oublié ?</a>
+                    <a href="oubliMdp.php">Mot de passe oublié ?</a>
                     <button name="connexion" type="submit" value="connexion">Se connecter</button>
                 </form>
             </div>

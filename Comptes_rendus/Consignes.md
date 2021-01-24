@@ -33,7 +33,7 @@ Ensuite, des points sont ajoutés si :
 * Hébergement du site 
 * Référencement du site, c'est-à-dire faire connaitre son site en le faisant connaître des moteurs de recherches
 
-Au niveau de la notation, il est possible d'avoir plus de 20 si la travail est largement au dessus des autres.
+Au niveau de la notation, il est possible d'avoir plus de 20 si le travail est largement au dessus des autres.
 
 On doit donc créer le front end et le back end. Ceux-ci représentent respectivement : le site en surface et la gestion du site. La plupart des points sont donnés pour ce projet pour le front end. Le back end n'est pas visible par le client.
 

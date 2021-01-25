@@ -35,9 +35,10 @@ Redéfinition des objectifs personnels pour le projet.
 ### Non impératifs ###
 
 * Icône à rajouter sur le schéma de l'index
-* Cherche le logiciel de montage pour la vidéo et égalisation du son 
 * Faire la page de garde du projet Proxima Centauri
 * Ajouter un chronomètre pour le temps de réponse
 * Faire le code des badges 
 
-NB : Le logiciel que d'anciens étudiants ont utilisés pour enregistrer leurs écrans est screencastmatic. 
+NB : Le logiciel d'enregistrement pour les écrans : screencastmatic. 
+NB : Le logiciel de montage pour la video : VideoPad. 
+NB : Le logiciel de son : Audacity. 

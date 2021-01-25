@@ -101,7 +101,27 @@ li {
     position: relative;
     width: 40%;
 }
+.stats{
+    position: relative;
+margin-bottom: 20%;
+display: flex;
+justify-content: center;
 
+}
+
+.table{
+position: relative;
+margin-top: -200px;
+/*padding-bottom: 1200px;*/
+
+}
+
+.légendes{
+    position: absolute;
+margin-bottom: 40px;
+padding-bottom: 20px;
+bottom: 0;
+}
 .etoile {
     z-index: 1;
     transform: rotate(60deg);

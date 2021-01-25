@@ -1,8 +1,15 @@
 body {
 	margin: 0;
 	padding: 0;
+	
 }
 
+.titre img {
+	
+	height: 500px;
+	background-image: center;
+	margin-top: 20%;
+}
 .Menuderoulant {
 	height: 60px;
 	list-style: none;

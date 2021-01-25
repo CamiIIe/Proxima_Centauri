@@ -64,7 +64,17 @@ body {
 a, a:hover {
     text-decoration: none;
 }
+/*
+.infos{
+    margin-bottom: 100px;
+    padding-top: : 200px;
+}
 
+.Tableau_infos{
+    margin-bottom: 20px;
+
+}
+*/
 ul {
 	padding-left: 0;
 }
@@ -113,6 +123,7 @@ li {
     position: absolute;
 }
 
+
 .tb{
     background-color: black;
     
@@ -122,6 +133,8 @@ li {
     text-align: center;
     margin-top: 10%;
 }
+
+
 
 
 #jouer {

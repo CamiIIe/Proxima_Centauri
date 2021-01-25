@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="src/css/style.css">         <!-- CSS PRINCIPAL -->
         <link rel="stylesheet" href="src/css/header_navbar.css"> <!-- CSS HEADER ET SIDENAVBAR -->
         <link rel="stylesheet" href="src/css/form.css">          <!-- CSS FORM -->
+        <link rel="stylesheet" href="src/css/oubli.css">         <!-- CSS OUBLI -->
         <!-- CSS -->
 
         <!-- FONT -->
@@ -36,17 +37,17 @@
                 <i class='bx bx-menu' id="header-toggle"></i>
             </div>
 
-            <!-- <div class="container-fluid connexion">
-                <span><a href="#" class = "left">
+            <div class="container-fluid connexion">
+                <!-- <span><a href="#" class = "left">
                     <button type="button" class="btn btn-light">S'inscrire</button>
                 </a>
-                </span>
-                <span><a href="#">
+                </span> -->
+                <!-- <span><a href="form.php">
                     <button type="button" class="btn btn-warning"><i class='bx bx-rocket'></i>
-                        Se connecter</button>
+                        Connexion</button>
                     </a>
-                </span>
-            </div> -->
+                </span> -->
+            </div>
         </header>
         <!-- HEADER -->
 
@@ -97,74 +98,46 @@
         </div>
         <!-- SIDENAVBAR -->
 
-        <!-- MAIN/FORM -->
-        <div class="container" id="container">
-            <div class="form-container sign-up-container">
-                <form action="formPHP.php" method="POST">
-                    <h1>S'inscrire</h1>
-                    <?php
-                        if (isset($_GET ["pasenregistre"])) echo "Erreur : Pas enregistré.";
-                        if (isset($_GET ["emailnonvalide"])) echo "Cette adresse e-mail est non valide.";
-                        if (isset($_GET ["pseudoconnu"])){
-                            echo 'Ce pseudo est déjà utilisé. <a href="oubliMdp.php?oublimdp=1">Mot de passe oublié ?</a>';};
-                        if (isset($_GET ["emailconnu"])){
-                            echo 'Cet e-mail est déjà utilisé. <a href="oubliMdp.php?oublimdp=1">Mot de passe oublié ?</a>';};
-                        if (isset($_GET ["ok"])){
-                            echo 'Inscription réussie !';
-                        }
-                    ?>
-
-                    <!-- <div class="social-container">
-                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <span>or use your email for registration</span> -->
-                    <input type="text" placeholder="Pseudo" name="pseudo" />
-                    <input type="email" placeholder="Email" name="email" />
-                    <input type="text" placeholder="Nom" name="nom" />
-                    <input type="text" placeholder="Prénom" name="prenom" />
-                    <input type="date" name="dateDeNaissance" />
-                    <input type="password" placeholder="Mot de passe" name="motDePasse"/>
-                    <button name="inscription" type="submit" value="inscription">S'inscrire</button>
-                </form>
-            </div>
-            <div class="form-container sign-in-container">
-                <form action="formPHP.php" method="POST">
-                    <h1>Se connecter</h1>
-                    <?php
-                        if (isset($_GET ["invalide"])){
-                        echo "Votre mot de passe ou votre identifiant est invalide ! ";
-                        };
-                    ?>
-                    <!-- <div class="social-container">
-                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                    </div> 
-                    <span>or use your account</span> -->
-                    <input type="text" placeholder="Pseudo" name="pseudo" />
-                    <input type="password" placeholder="Mot de passe" name="motDePasse" />
-                    <a href="oubliMdp.php">Mot de passe oublié ?</a>
-                    <button name="connexion" type="submit" value="connexion">Se connecter</button>
-                </form>
-            </div>
-            <div class="overlay-container">
-                <div class="overlay">
-                    <div class="overlay-panel overlay-left">
-                        <h1>Bon retour parmi nous, voyageur de l'espace !</h1>
-                        <p>Pour rester en contact avec nos satellites connecte toi avec tes informations personnelles</p>
-                        <button class="ghost" id="signIn">Se connecter</button>
-                    </div>
-                    <div class="overlay-panel overlay-right">
-                        <h1>Bien le bonjour, étranger !</h1>
-                        <p>Enregistre toi pour débuter ton voyage à nos côtés</p>
-                        <button class="ghost" id="signUp">S'inscrire</button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- MAIN -->
+        <div class="container-fluid oubli">
+         
+            <form method = "post" enctype = "form-data" action = "traite_O.php">
+            <h1>Mot de passe oublié ?</h1>
+                Pour réinisialiser votre mot de passe, entrez votre adresse e-mail ici : 
+                    <input type = "text" name = "emailo" />
+                    <input class="boutonV" type="submit" name="valider"value="Valider">
+            </form>
+            <?php
+            //Résultat si le mail n'est pas dans la base de donnée 
+                if (isset($_GET ["inexistant"])){
+                    echo '<form method = "post" enctype = "form-data" action = "traite_O.php">';
+                    echo "<br />Cet e-mail n'existe pas dans la base de données. Voulez-vous créer un nouveau compte ? ";
+                    //echo "<a href='form.php'>Créer un nouveau compte</a><br>";
+                    echo '<input class="boutonR" type = "submit" name = "connexion" value = "Créer un nouveau compte" /><br />'
+                            . ' </form>';
+                };
+                //Résultat si le mail est pas dans la base de donnée 
+                if (isset($_GET ["envoye"])){
+                    echo '<form method = "post" enctype = "form-data" action = "traite_O.php">';
+                    echo "<br />Un mail a bien été envoyé. ";
+                    //echo "<a class='oubli' href='form.php'>Retourner à la page de connexion</a><br>";
+                    echo '<input class="boutonR" type = "submit" name = "connexion" value = "Retourner à la page de connexion" /><br />'
+                            . ' </form>';
+                };
+
+            ?>
+        </div>
+
+        <div class ="container-fluid propos">
+            <!-- Icone A propos : Rocket qui part de la Terre / Accès à la page à propos -->
+            <a href="propos.html">
+                <img src = "src/img/icones/png/rocket.png" class="img-fluid"> 
+            </a>
+
+            <a href="remerciements.html">
+                <img src = "src/img/icones/png/Heart.png" class="img-fluid"> 
+            </a>
+        </div>
 
         <!-- FOOTER -->
         <footer>
@@ -179,7 +152,6 @@
         <script src="src/js/bootstrap.min.js"></script>
         <!-- <script src="src/js/gestionSVG.js"></script> -->
         <script src="src/js/main.js"></script>
-        <script src="src/js/form.js"></script>
         <!-- JAVASCRIPT -->
       
     </body>

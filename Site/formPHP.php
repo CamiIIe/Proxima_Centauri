@@ -40,7 +40,7 @@ Traitement du formulaire de la page de connexion
                     // $_SESSION["der_log"]=$der_log;
 
                     //Redirection vers la page d'index avec un compte
-                    header("Location: index.html");
+                    header("Location: compte.html");
                 }
                 else{
                     //Redirection vers l'accueil en cas de mot de passe invalide

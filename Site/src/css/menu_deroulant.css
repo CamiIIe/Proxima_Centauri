@@ -1,8 +1,15 @@
 body {
 	margin: 0;
 	padding: 0;
+	
 }
 
+.titre img {
+	
+	height: 500px;
+	background-image: center;
+	margin-top: 20%;
+}
 .Menuderoulant {
 	height: 60px;
 	list-style: none;
@@ -59,3 +66,12 @@ body {
  .Menuderoulant li:hover .sousmenu {
  	display: block;
  }
+
+ .titre img {
+ 	width: 50%;
+ }
+ .titre {
+ 	position: absolute;
+ 	margin-top: 25%;
+ }
+ 

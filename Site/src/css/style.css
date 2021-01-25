@@ -1,5 +1,4 @@
-/* Feuille CSS pour des paramètres globaux et la page d'acceuil */
-
+/* Feuille CSS pour des paramètres globaux et la page d'accueil */
 @charset "UTF-8";
 
 /* FONTS */
@@ -64,7 +63,7 @@ body {
     /*Concerne le background*/
     background-image: url(../img/IMGFondReduit.jpg);
     background-size: cover;
-    -webkit-background-clip: cover; /*Pour les anciens navigateurs*/
+    /*-webkit-background-clip: cover; /*Pour les anciens navigateurs */
     background-position: center center; /*Centrer horizontal et vertical*/
     background-repeat : no-repeat; 
     min-height: 100vh;
@@ -161,6 +160,10 @@ li {
     z-index : 0; 
 }
 
+.galaxie {
+    position: absolute;
+}
+
 .galaxie img{
     width: 60%;
     height: 60%;
@@ -175,9 +178,9 @@ li {
 
 /*A propos - Main */ 
 .propos{
+    margin-top: 80vh;
     margin-left: 82vw; 
     margin-right: 8vw;
-
 }
 
 .propos img {
@@ -227,7 +230,7 @@ li {
     */
 }
 
-.old{color : green;}; 
+.old{color : green;}
 
 /* Remerciements */ 
 .astronautBIS img {

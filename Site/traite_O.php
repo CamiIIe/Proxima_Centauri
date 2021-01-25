@@ -16,6 +16,10 @@ Traitement du formulaire d'oubli de mot de passe
         $BD="proxima"; // nom de la base de données
         $bdd =  new PDO('mysql:host=localhost;dbname=proxima;charset=utf8', 'root', '');
         
+        if(isset($_POST["connexion"])){
+            header("Location:form.php");
+        }
+
         //Vérification mail
         $reponse = $bdd->prepare('SELECT email FROM compte WHERE email=:email');
         $reponse->execute(array('email'=>$_POST["emailo"]));

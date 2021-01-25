@@ -157,7 +157,7 @@
                         <button class="ghost" id="signIn">Se connecter</button>
                     </div>
                     <div class="overlay-panel overlay-right">
-                        <h1>Bien le bonjour, alien !</h1>
+                        <h1>Bien le bonjour, étranger !</h1>
                         <p>Enregistre toi pour débuter ton voyage à nos côtés</p>
                         <button class="ghost" id="signUp">S'inscrire</button>
                     </div>

@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="src/css/bootstrap.min.css"> <!-- CSS BOOTSTRAP -->
         <link rel="stylesheet" href="src/css/style.css">         <!-- CSS PRINCIPAL -->
         <link rel="stylesheet" href="src/css/header_navbar.css"> <!-- CSS HEADER ET SIDENAVBAR -->
+        <link rel="stylesheet" href="src/css/form.css">          <!-- CSS FORM -->
+        <link rel="stylesheet" href="src/css/oubli.css">         <!-- CSS OUBLI -->
         <!-- CSS -->
 
         <!-- FONT -->
@@ -40,11 +42,11 @@
                     <button type="button" class="btn btn-light">S'inscrire</button>
                 </a>
                 </span> -->
-                <span><a href="form.php">
+                <!-- <span><a href="form.php">
                     <button type="button" class="btn btn-warning"><i class='bx bx-rocket'></i>
                         Connexion</button>
                     </a>
-                </span>
+                </span> -->
             </div>
         </header>
         <!-- HEADER -->
@@ -97,30 +99,33 @@
         <!-- SIDENAVBAR -->
 
         <!-- MAIN -->
-        <div class="container-fluid galaxie">
-        <h1>Oubli Mot de Passe</h1>
-                 
+        <div class="container-fluid oubli">
          
-                 <form method = "post" enctype = "form-data" action = "Traite_O.php">
-                 Pour retrouver votre mot de passe, entrez votre adresse e-mail ici : 
-                    <input type = "text" name = "emailo" /> <input class="boutonV" type="submit" name="valider"value="Valider">
-                 </form>
-                 <?php
-                //Résultat si le mail n'est pas dans la base de donnée 
+            <form method = "post" enctype = "form-data" action = "traite_O.php">
+            <h1>Mot de passe oublié ?</h1>
+                Pour réinisialiser votre mot de passe, entrez votre adresse e-mail ici : 
+                    <input type = "text" name = "emailo" />
+                    <input class="boutonV" type="submit" name="valider"value="Valider">
+            </form>
+            <?php
+            //Résultat si le mail n'est pas dans la base de donnée 
                 if (isset($_GET ["inexistant"])){
-                    echo '<form method = "post" enctype = "form-data" action = "Traite_O.php">';
+                    echo '<form method = "post" enctype = "form-data" action = "traite_O.php">';
                     echo "<br />Cet e-mail n'existe pas dans la base de données. Voulez-vous créer un nouveau compte ? ";
-                    echo '<input class="boutonR" type = "submit" name = "nveaucpte" value = "Créer un nouveau compte" /><br />'
+                    //echo "<a href='form.php'>Créer un nouveau compte</a><br>";
+                    echo '<input class="boutonR" type = "submit" name = "connexion" value = "Créer un nouveau compte" /><br />'
                             . ' </form>';
                 };
                 //Résultat si le mail est pas dans la base de donnée 
                 if (isset($_GET ["envoye"])){
-                    echo '<form method = "post" enctype = "form-data" action = "Traite_O.php">';
+                    echo '<form method = "post" enctype = "form-data" action = "traite_O.php">';
                     echo "<br />Un mail a bien été envoyé. ";
-                    echo '<input class="boutonR" type = "submit" name = "accueil" value = "Retourner à l\'Accueil" /><br />'
+                    //echo "<a class='oubli' href='form.php'>Retourner à la page de connexion</a><br>";
+                    echo '<input class="boutonR" type = "submit" name = "connexion" value = "Retourner à la page de connexion" /><br />'
                             . ' </form>';
                 };
-               ?>
+
+            ?>
         </div>
 
         <div class ="container-fluid propos">

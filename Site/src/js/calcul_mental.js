@@ -1,7 +1,7 @@
 // SCRIPT JAVASCRIPT POUR LE JEU DU CALCUL ASTRONOMIQUE
 
 window.onload = genere;
-let niveau = 6;
+let niveau = 1;
 let nbBonneRep = 0;
 let nbMauvaisRep = 0;
 

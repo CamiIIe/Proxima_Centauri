@@ -171,12 +171,35 @@ li {
     z-index : 0;
     margin-top: 20vh;
     margin-bottom: 10vh;
-    margin-left: 20vw; 
+    margin-left: 15vw; 
     margin-right: 20vw;
 
 }
 
 /*A propos - Main */ 
+#logoS, #logoM, #logoP {
+    width: 30%;
+    opacity: unset;
+}
+
+#logoCM {
+    width: 25%;
+}
+
+.panel {
+    background-color: #3a3a3a;
+    width: 70%;
+    margin: auto;
+    margin-top: 20vh;
+    border-radius: 3px;
+}
+
+.container img {
+    margin-left:18vh;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
 .propos{
     margin-top: 80vh;
     margin-left: 82vw; 
@@ -247,4 +270,12 @@ li {
 .couleur_nom {
     color : darkgoldenrod; 
 }
+
+/* Infos perso */
+
+.infos img {
+    width: 10%;
+}
+
+
 /* FOOTER */

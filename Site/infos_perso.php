@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -5,13 +6,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-        <title>Proxima Centauri</title>
+        <title>Informations Personnelles</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="src/css/bootstrap.min.css"> <!-- CSS BOOTSTRAP -->
         <link rel="stylesheet" href="src/css/style.css">         <!-- CSS PRINCIPAL -->
         <link rel="stylesheet" href="src/css/header_navbar.css"> <!-- CSS HEADER ET SIDENAVBAR -->
-        <link rel="stylesheet" href="src/css/menu_deroulant.css"> <!-- CSS MENU DEROULANT -->
         <!-- CSS -->
 
         <!-- FONT -->
@@ -35,17 +35,6 @@
             <div class="header__toggle">
                 <i class='bx bx-menu' id="header-toggle"></i>
             </div>
-
-            <ul class="Menuderoulant">
-                <li>
-                    <a href="infos_perso.php">Mon compte</a>
-                        <ul class="sousmenu">
-                            <li><a href="statistiques.html">Statistiques</a></li>
-                            <li><a href="mes_badges.html">Mes badges</a></li>
-                            <li><a href="formPHP.php?deconnexion=1">Deconnexion</a></li>   
-                        </ul>
-                </li>
-              </ul>
 
         </header>
         <!-- HEADER -->
@@ -95,20 +84,57 @@
                 </a>
             </nav>
         </div>
-        <!-- SIDENAVBAR -->
+        <!-- SIDENAVBAR -->         
 
-        <!-- MAIN -->
+        <!-- Tableau Info_perso -->
+
+
+        <!-- <br><br> -->
         
-        <div class ="container-fluid propos">
-            <!-- Icone A propos : Rocket qui part de la Terre / Accès à la page à propos -->
-            <a href="propos.html">
-                <img src = "src/img/icones/png/rocket.png"> 
-            </a>
+        <!--Titre Informations Personnelles -->
+            <b><img src="src/img/icones/png/titre_infos_perso_SF.png" class="img-fluid" alt =""></b>
+        <!--Titre Informations Personnelles -->
+        
+        
+        <br> 
+        <div class="Tableau_infos">
+        <?php if ( empty($_SESSION) ) { session_start(); }
+            echo "<table class='table table-bordered  w-50 tb'>
+                <tr>
+                    <th>Nom</th>
+                    <th>".$_SESSION["nom"]."</th>
+                </tr>
+                <tr>
+                    <th>Prénom</th>
+                    <th>".$_SESSION["prenom"]."</th>
+                </tr>
+                <tr>
+                    <th>Date de naissance</th>
+                    <th>".$_SESSION["dateDeNaissance"]."</th>
+                </tr>
+                <tr>
+                    <th>Adresse Mail</th>
+                    <th>".$_SESSION["email"]."</th>
+                </tr>
+                <tr>
+                    <th>Pseudo</th>
+                    <th>".$_SESSION["pseudo"]."</th>
+                </tr>
+                <tr>
+                    <th>Niveau</th>
+                    <th>7</th>
+                </tr>
+                <tr>
+                    <th>Date d'inscription</th>
+                    <th>".$_SESSION["dateInscription"]."</th>
+                </tr>
+            </table>";
+            ?>
+        </div>  
+        
+        <!-- Tableau Info_perso -->
 
-            <a href="remerciements.html">
-                <img src = "src/img/icones/png/Heart.png"> 
-            </a>
-        </div>
+        
 
         <!-- FOOTER -->
         <footer>
@@ -129,3 +155,7 @@
     <!-- BODY // CONTENU DU SITE -->
 
 </html>
+
+
+
+

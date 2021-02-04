@@ -30,8 +30,8 @@ Traitement du formulaire de la page de connexion
                 
             //Comparaison du pseudo et du mot de passe avec ceux de la base de donnée puis création de la session
                 if(strcmp($_POST["pseudo"], $login)==0 & strcmp($_POST["motDePasse"], $pwd)==0){//pour comparer deux chaînes
-                    session_start();
-                    $_SESSION["pseudo"]=$login; $_SESSION["motDePasse"]=$pwd; $_SESSION["pseudo"]=$pseudo;
+                    if ( empty($_SESSION) ) { session_start(); }
+                    $_SESSION["pseudo"]=$login; $_SESSION["motDePasse"]=$pwd; $_SESSION["email"]=$email;
                     $_SESSION["nom"]=$nom; $_SESSION["prenom"]=$prenom; $_SESSION["dateDeNaissance"]=$date;
                     $_SESSION["dateInscription"]=$dateI;
                     // $der_log=$y."-".$m."-".$d;
@@ -40,7 +40,7 @@ Traitement du formulaire de la page de connexion
                     // $_SESSION["der_log"]=$der_log;
 
                     //Redirection vers la page d'index avec un compte
-                    header("Location: compte.html");
+                    header("Location: compte.php");
                 }
                 else{
                     //Redirection vers l'accueil en cas de mot de passe invalide
@@ -97,7 +97,7 @@ Traitement du formulaire de la page de connexion
                                     'nom' => $nom, 'prenom'=> $prenom, 'pseudo' => $pseudo,
                                     'dateDeNaissance' => $dateDeNaissance, 'dateInscription' => $dateInscription));
                     
-                                header('Location: form.php?ok=1');
+                                header('Location: compte.php?ok=1');
                             }
                             else{header('Location: form.php?pasenregistre=1');}
                         }
@@ -114,10 +114,10 @@ Traitement du formulaire de la page de connexion
         // if (isset ($_POST['oublimdp'])){header("Location: OubliMdp.php");}      
                
         //Déconnexion espace membre
-        // if (isset ($_POST['deconnexion'])){
-        //     session_destroy();
-        //     header("Location: Accueil.php?deconnexion=1");
-        // } 
+        if (isset ($_GET['deconnexion'])){
+            session_destroy();
+            header("Location: index.html?deconnexion=1");
+        } 
         ?>
     </body>
 </html>

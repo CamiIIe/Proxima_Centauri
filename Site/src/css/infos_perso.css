@@ -134,7 +134,9 @@ li {
     margin-top: 10%;
 }
 
-
+.infos img {
+    width: 60%;
+}
 
 
 #jouer {

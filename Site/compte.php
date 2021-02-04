@@ -30,6 +30,7 @@
 
     <!-- BODY // CONTENU DU SITE -->
     <body class="animate-in" id ="body-pd">
+        <?php if ( empty($_SESSION) ) { session_start(); } ?>
         
         <!-- HEADER -->
         <header class="header" id="header">
@@ -40,19 +41,32 @@
             <!-- Menu déroulant mon compte -->
           <ul class="Menuderoulant">
             <li>
-                <a href="#">Mon compte</a>
+                <a href="infos_perso.php">Mon compte</a>
                     <ul class="sousmenu">
-
-                        <li><a href="Statistiques.html">Statistiques</a></li>
-                        <li><a href="#">Mes badges</a></li>
-                        <li><a href="#">Remerciments</a></li>
-                        <li><a href="#">Deconnexion</a></li>   
+                        <li><a href="statistiques.html">Statistiques</a></li>
+                        <li><a href="mes_badges.html">Mes badges</a></li>
+                        <li><a href="formPHP.php?deconnexion=1">Déconnexion</a></li>   
                     </ul>
             </li>
           </ul>
+
+            <!-- <div class="btn-group">
+                <a type="button" class="btn btn-warning">Mon compte</a>
+                <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="#">Statistiques</a></li>
+                    <li><a class="dropdown-item" href="#">Mes badges</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+                </ul>
+            </div> -->
         
         </header>
         <!-- HEADER -->
+
+        
 
         <!-- SIDENAVBAR -->
         <div class="l-navbar" id="nav-bar">
@@ -118,6 +132,7 @@
 
         <!-- MAIN -->
         <div class="container-fluid titre">
+            
             <!-- IMAGE PRINCIPALE : GALAXIE / SCHEMA D'ACCES AUX JEUX -->
             <img class="img-responsive" src="src/img/icones/png/galaxieAvecRond.png">
         </div>
@@ -132,9 +147,8 @@
 
 
         <!-- JAVASCRIPT -->
-        <script src="src/js/jquery-3.5.1.min.js"></script>
-        <script src="src/js/bootstrap.min.js"></script>
-        <!-- <script src="src/js/gestionSVG.js"></script> -->
+        <script type="text/javascript" src="src/js/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="src/js/bootstrap.min.js"></script>
         <script src="src/js/main.js"></script>
         <!-- JAVASCRIPT -->
       

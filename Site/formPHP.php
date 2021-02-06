@@ -14,13 +14,13 @@ Traitement du formulaire de la page de connexion
         $user = "root"; //nom de l'utilisateur de la BD
         $passwd = ""; // mot de passe de l'utilisateur
         $BD = "proxima"; // nom de la base de données
-        $bd = new PDO('mysql:host=localhost;dbname=proxima;charset=utf8', 'root', '');
+        $bd = new PDO('mysql:host=localhost;dbname=proxima', 'root', '');
         
         /* CONNEXION */
         if (isset ($_POST['connexion'])){
             //Récupération des données de l'utilisateur à partir de son pseudo
             $pseudo = $_POST['pseudo'];
-            $reponse = $bd -> prepare("SELECT * FROM compte WHERE pseudo='$pseudo'");
+            $reponse = $bd -> prepare("SELECT * FROM compte WHERE pseudo=:pseudo");
             $reponse -> execute(array('pseudo'=>$_POST["pseudo"]));
             while ($donnees = $reponse->fetch()){
                 $login = $donnees['pseudo']; $pwd=$donnees['motDePasse']; $email=$donnees['email'];
@@ -63,12 +63,12 @@ Traitement du formulaire de la page de connexion
                 
                 
                 //Déjà connu
-                $econnu = $bd->prepare("SELECT * FROM compte WHERE email='$email'");
+                $econnu = $bd->prepare("SELECT * FROM compte WHERE email=:email");
                 $econnu->execute(array('email'=>$email));
                 while ($edonnees = $econnu->fetch()){
                     $loginC=$edonnees['email'];
                 }
-                $pconnu = $bd->prepare("SELECT * FROM compte WHERE pseudo='$pseudo'");
+                $pconnu = $bd->prepare("SELECT * FROM compte WHERE pseudo=:pseudo");
                 $pconnu->execute(array('pseudo'=>$pseudo));
                 while ($pdonnees = $pconnu->fetch()){
                     $pseudoC=$pdonnees['pseudo'];
@@ -92,7 +92,7 @@ Traitement du formulaire de la page de connexion
                             if (isset ($_POST['email']) && isset ($_POST['pseudo']) && isset ($_POST['motDePasse']) 
                                     && isset ($_POST['nom']) && isset ($_POST['prenom'])){
                                 $insertion = $bd->prepare('INSERT INTO compte (email, motDePasse, nom, prenom, pseudo, dateDeNaissance, dateInscription)'
-                                        . "VALUES ('$email', '$motDePasse', '$nom', '$prenom', '$pseudo', '$dateDeNaissance', '$dateInscription')");
+                                        . "VALUES (:email, :motDePasse, :nom, :prenom, :pseudo, :dateDeNaissance, :dateInscription)");
                                 $insertion->execute(array('email' => $email, 'motDePasse'=> $motDePasse, 
                                     'nom' => $nom, 'prenom'=> $prenom, 'pseudo' => $pseudo,
                                     'dateDeNaissance' => $dateDeNaissance, 'dateInscription' => $dateInscription));

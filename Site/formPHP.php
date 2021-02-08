@@ -10,11 +10,11 @@ Traitement du formulaire de la page de connexion
     <body>
         <?php
         //Connexion à la Base de Données
-        $host = "localhost"; // nom du serveur
-        $user = "root"; //nom de l'utilisateur de la BD
-        $passwd = ""; // mot de passe de l'utilisateur
-        $BD = "proxima"; // nom de la base de données
-        $bd = new PDO('mysql:host=localhost;dbname=proxima', 'root', '');
+        $host = "mysql-proximacentauri.alwaysdata.net"; // nom du serveur
+        $user = "226279"; //nom de l'utilisateur de la BD
+        $passwd = "proxi@123ma"; // mot de passe de l'utilisateur
+        $BD = "proximacentauri_bd"; // nom de la base de données
+        $bd = new PDO('mysql:host=mysql-proximacentauri.alwaysdata.net;dbname=proximacentauri_bd', '226279', 'proxi@123ma');
         
         /* CONNEXION */
         if (isset ($_POST['connexion'])){

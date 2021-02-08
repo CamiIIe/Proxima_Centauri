@@ -10,11 +10,11 @@ Traitement du formulaire d'oubli de mot de passe
     <body>
         <?php
         //Connexion à la Base de Données
-        $Host="localhost"; // nom du serveur
-        $User="root";//nom de l'utilisateur de la BD
-        $Passwd=""; // mot de passe de l'utilisateur
-        $BD="proxima"; // nom de la base de données
-        $bdd =  new PDO('mysql:host=localhost;dbname=proxima;charset=utf8', 'root', '');
+        $host = "mysql-proximacentauri.alwaysdata.net"; // nom du serveur
+        $user = "226279"; //nom de l'utilisateur de la BD
+        $passwd = "proxi@123ma"; // mot de passe de l'utilisateur
+        $BD = "proximacentauri_bd"; // nom de la base de données
+        $bd = new PDO('mysql:host=mysql-proximacentauri.alwaysdata.net;dbname=proximacentauri_bd', '226279', 'proxi@123ma');
         
         if(isset($_POST["connexion"])){
             header("Location:form.php");

@@ -10,7 +10,7 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="src/css/bootstrap.min.css"> <!-- CSS BOOTSTRAP -->
-        <link rel="stylesheet" href="src/css/style.css">         <!-- CSS PRINCIPAL -->
+        <link rel="stylesheet" href="src/css/infos_perso.css">         <!-- CSS PRINCIPAL -->
         <link rel="stylesheet" href="src/css/header_navbar.css"> <!-- CSS HEADER ET SIDENAVBAR -->
         <!-- CSS -->
 
@@ -99,33 +99,33 @@
         <br> 
         <div class="Tableau_infos">
         <?php if ( empty($_SESSION) ) { session_start(); }
-            echo "<table class='table table-bordered  w-50 tb'>
+            echo "<table class='table table-bordered  w-60 tb'>
                 <tr>
-                    <th>Nom</th>
+                    <th class='grey'>Nom</th>
                     <th>".$_SESSION["nom"]."</th>
                 </tr>
                 <tr>
-                    <th>Prénom</th>
+                    <th class='grey'>Prénom</th>
                     <th>".$_SESSION["prenom"]."</th>
                 </tr>
                 <tr>
-                    <th>Date de naissance</th>
+                    <th class='grey'>Date de naissance</th>
                     <th>".$_SESSION["dateDeNaissance"]."</th>
                 </tr>
                 <tr>
-                    <th>Adresse Mail</th>
+                    <th class='grey'>Adresse Mail</th>
                     <th>".$_SESSION["email"]."</th>
                 </tr>
                 <tr>
-                    <th>Pseudo</th>
+                    <th class='grey'>Pseudo</th>
                     <th>".$_SESSION["pseudo"]."</th>
                 </tr>
                 <tr>
-                    <th>Niveau</th>
+                    <th class='grey'>Niveau</th>
                     <th>7</th>
                 </tr>
                 <tr>
-                    <th>Date d'inscription</th>
+                    <th class='grey'>Date d'inscription</th>
                     <th>".$_SESSION["dateInscription"]."</th>
                 </tr>
             </table>";

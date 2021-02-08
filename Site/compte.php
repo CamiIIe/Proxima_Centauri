@@ -87,19 +87,19 @@
                         </a>
 
                         <!-- LOGO / NOM / LIEN VERS "CALCUL ASTRONOMIQUE" -->
-                        <a href="#" class="nav__link">
+                        <a href="not_finished.html" class="nav__link">
                             <i class='bx bxs-star-half nav__icon' ></i>
                             <span class="nav__name">Memory Stellaire</span>
                         </a>
                         
                         <!-- LOGO / NOM / LIEN VERS "VISE LA LUNE" -->
-                        <a href="#" class="nav__link">
+                        <a href="not_finished.html" class="nav__link">
                             <i class='bx bxs-moon nav__icon' ></i>
                             <span class="nav__name">Vise la Lune</span>
                         </a>
 
                         <!-- LOGO / NOM / LIEN VERS "PLANETE AUX COULEURS" -->
-                        <a href="#" class="nav__link">
+                        <a href="not_finished.html" class="nav__link">
                             <i class='bx bx-planet nav__icon' ></i>
                             <span class="nav__name">Planète aux Couleurs</span>
                         </a>
@@ -115,27 +115,33 @@
         </div>
         <!-- SIDENAVBAR -->
 
+        <!-- MAIN -->
+         <!-- <div class="container-fluid galaxie"> -->
+            <!-- IMAGE PRINCIPALE : GALAXIE / SCHEMA D'ACCES AUX JEUX -->
+            <!-- <img src="src/img/icones/png/galaxieAvecRond.png" class="img-fluid" alt ="">
+        </div> -->
+
+        <div class="container-fluid">
+            <div class="row row-cols-2 panel">
+              <div class="col-xs-auto text-center"><a href="calcul_mental.html"><strong>Calcul Astronomique</strong><img id="logoCM" src="src/img/icones/png/compass.png"></a></div>
+              <div class="col-xs-auto text-center"><a href="not_finished.html"><strong>Memory Stellaire</strong><img id="logoS" src="src/img/icones/png/star.png"></a></div>
+              <div class="col-xs-auto text-center"><a href="not_finished.html"><strong>Vise la Lune</strong><img id="logoM" src="src/img/icones/png/moon.png"></a></div>
+              <div class="col-xs-auto text-center"><a href="not_finished.html"><strong>Planète aux Couleurs</strong><img id="logoP" src="src/img/icones/png/planets.png"></a></div>
+            </div>
+        </div>
+
         <div class ="container-fluid propos">
             <!-- Icone A propos : Rocket qui part de la Terre / Accès à la page à propos -->
-            <a href="statistiques.html">
-                <!--
-                <img src = "src/img/icones/png/rocket.png"> 
+            <a href="proposC.html">
+                <img src = "src/img/icones/png/rocket.png" class="img-fluid" alt ="">
             </a>
-        -->
 
-            <a href="infos_perso.html">
-               <!--
-                <img src = "src/img/icones/png/Heart.png"> 
+            <a href="remerciementsC.html">
+                <img src = "src/img/icones/png/Heart.png" class="img-fluid" alt ="">
             </a>
-        -->
         </div>
 
-        <!-- MAIN -->
-        <div class="container-fluid titre">
-            
-            <!-- IMAGE PRINCIPALE : GALAXIE / SCHEMA D'ACCES AUX JEUX -->
-            <img class="img-responsive" src="src/img/icones/png/galaxieAvecRond.png">
-        </div>
+        
         <!-- MAIN -->
 
         <!-- FOOTER -->

@@ -65,7 +65,7 @@ body {
     background-size: cover;
     /*-webkit-background-clip: cover; /*Pour les anciens navigateurs */
     background-position: center center; /*Centrer horizontal et vertical*/
-    background-repeat : no-repeat; 
+    background-repeat : no-repeat;
     min-height: 100vh;
     min-width: 100vh;
 }
@@ -171,7 +171,7 @@ li {
     z-index : 0;
     margin-top: 20vh;
     margin-bottom: 10vh;
-    margin-left: 20vw; 
+    margin-left: 15vw;
     margin-right: 20vw;
 
 }
@@ -179,7 +179,7 @@ li {
 /*A propos - Main */ 
 .propos{
     margin-top: 80vh;
-    margin-left: 82vw; 
+    margin-left: 82vw;
     margin-right: 8vw;
 }
 
@@ -198,14 +198,14 @@ li {
 
 .apropos{
     background-color: black; 
-    margin-top : 15px; 
+    margin-top : 15px;
     /* margin-left: 5vw;
     margin-right: 20vw;
     margin-bottom: 60vh; */
 
     z-index: 1;
     width: 50%;
-    position : absolute; 
+    position : absolute;
 }
 
 .apropos p {

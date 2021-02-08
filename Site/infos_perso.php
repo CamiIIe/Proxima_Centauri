@@ -1,15 +1,16 @@
+
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 
     <!-- HEAD -->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-        <title>Proxima Centauri</title>
+        <title>Informations Personnelles</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="src/css/bootstrap.min.css"> <!-- CSS BOOTSTRAP -->
-        <link rel="stylesheet" href="src/css/calculAstronomique.css">         <!-- CSS PRINCIPAL -->
+        <link rel="stylesheet" href="src/css/infos_perso.css">         <!-- CSS PRINCIPAL -->
         <link rel="stylesheet" href="src/css/header_navbar.css"> <!-- CSS HEADER ET SIDENAVBAR -->
         <!-- CSS -->
 
@@ -27,25 +28,14 @@
     <!-- HEAD -->
 
     <!-- BODY // CONTENU DU SITE -->
-    <body class="animate-in" id="body-pd">
-
+    <body class="animate-in" id ="body-pd">
+        
         <!-- HEADER -->
         <header class="header" id="header">
             <div class="header__toggle">
                 <i class='bx bx-menu' id="header-toggle"></i>
             </div>
 
-            <div class="container-fluid connexion">
-                <!-- <span><a href="#" class = "left">
-                    <button type="button" class="btn btn-light">S'inscrire</button>
-                </a>
-                </span> -->
-                <span><a href="form.php">
-                    <button type="button" class="btn btn-warning"><i class='bx bx-rocket'></i>
-                        Connexion</button>
-                    </a>
-                </span>
-            </div>
         </header>
         <!-- HEADER -->
 
@@ -62,7 +52,7 @@
                     <!-- DIV DES JEUX -->
                     <div class="nav__list">
                         <!-- LOGO / NOM / LIEN VERS CALCUL ASTRONOMIQUE -->
-                        <a href="calcul_mental.html" class="nav__link active">
+                        <a href="calcul_mental.html" class="nav__link">
                         <i class='bx bxs-compass nav__icon' ></i>
                             <span class="nav__name">Calcul Astronomique</span>
                         </a>
@@ -94,51 +84,57 @@
                 </a>
             </nav>
         </div>
-        <!-- SIDENAVBAR -->
+        <!-- SIDENAVBAR -->         
 
-        <!-- MAIN -->
-        <div class="container-fluid" id="titreCalcul">
-            <a href="calcul_mental.html">
-                <img src="src/img/icones/png/titre_calcul_SF.png" class="img-fluid rounded mx-auto d-block" alt="">
-            </a>
-        </div>
-
-        <div class="container-fluid" id="main">
-            <!--<button class="btn btn-outline-secondary" type="button" id="btn-play" onclick="genere();"">Jouer</button><br/>
-            onkeyup="verif()" autocomplete="off"-->
-            <p id="calculastronomique"></p><br/>
-            <input type="number" class="form-control" id="result" name="result" pattern="[0-9]{1,}" autofocus/><br/>
-            <button class="btn btn-outline-secondary" type="button" id="btn-verif" onclick="verif()">Validez votre réponse</button><br/>
-        </div>
+        <!-- Tableau Info_perso -->
 
 
-        <div class="container-fluid finPage">
-            <div class="container-fluid regleCalcul">
-                <a href="#">
-                    <img src="src/img/icones/png/Feuille_et_crayon_SF.png" class="img-fluid regle"/>
-                    <span>
-                        <strong class ="underline">Les règles</strong> : <br>
-                        Saisie la réponse à l'expression et clique sur 'Valider la réponse' pour voir si tu as la bonne réponse !<br>
-                        Atteint 10 bonnes réponses consécutives pour passer au niveau supérieur. Au bout de 3 mauvaises réponses, tu descends d'un niveau</span>
-                </a>
-            </div>
+        <!-- <br><br> -->
+        
+        <!--Titre Informations Personnelles -->
+            <b><img src="src/img/icones/png/titre_infos_perso_SF.png" class="img-fluid" alt =""></b>
+        <!--Titre Informations Personnelles -->
+        
+        
+        <br> 
+        <div class="Tableau_infos">
+        <?php if ( empty($_SESSION) ) { session_start(); }
+            echo "<table class='table table-bordered  w-60 tb'>
+                <tr>
+                    <th class='grey'>Nom</th>
+                    <th>".$_SESSION["nom"]."</th>
+                </tr>
+                <tr>
+                    <th class='grey'>Prénom</th>
+                    <th>".$_SESSION["prenom"]."</th>
+                </tr>
+                <tr>
+                    <th class='grey'>Date de naissance</th>
+                    <th>".$_SESSION["dateDeNaissance"]."</th>
+                </tr>
+                <tr>
+                    <th class='grey'>Adresse Mail</th>
+                    <th>".$_SESSION["email"]."</th>
+                </tr>
+                <tr>
+                    <th class='grey'>Pseudo</th>
+                    <th>".$_SESSION["pseudo"]."</th>
+                </tr>
+                <tr>
+                    <th class='grey'>Niveau</th>
+                    <th>7</th>
+                </tr>
+                <tr>
+                    <th class='grey'>Date d'inscription</th>
+                    <th>".$_SESSION["dateInscription"]."</th>
+                </tr>
+            </table>";
+            ?>
+        </div>  
+        
+        <!-- Tableau Info_perso -->
 
-            <!-- Liens vers les pages à propos et remerciements -->
-            <div class ="container-fluid propos">
-                <!-- Icone A propos : Rocket qui part de la Terre / Accès à la page à propos -->
-                <a href="propos.html">
-                    <img src = "src/img/icones/png/rocket.png" class="img-fluid" alt ="">
-                </a>
-
-                <a href="remerciements.html">
-                    <img src = "src/img/icones/png/Heart.png" class="img-fluid" alt ="">
-                </a>
-            </div>
-        </div>
-
-
-
-        <!-- MAIN -->
+        
 
         <!-- FOOTER -->
         <footer>
@@ -149,9 +145,9 @@
 
 
         <!-- JAVASCRIPT -->
-        <script src="src/js/calcul_mental.js"></script>
         <script src="src/js/jquery-3.5.1.min.js"></script>
         <script src="src/js/bootstrap.min.js"></script>
+        <!-- <script src="src/js/gestionSVG.js"></script> -->
         <script src="src/js/main.js"></script>
         <!-- JAVASCRIPT -->
       
@@ -159,3 +155,7 @@
     <!-- BODY // CONTENU DU SITE -->
 
 </html>
+
+
+
+

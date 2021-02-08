@@ -103,7 +103,7 @@
          
             <form method = "post" enctype = "form-data" action = "traite_O.php">
             <h1>Mot de passe oublié ?</h1>
-                Pour réinisialiser votre mot de passe, entrez votre adresse e-mail ici : 
+                Pour réinitialiser votre mot de passe, entrez votre adresse e-mail ici : 
                     <input type = "text" name = "emailo" />
                     <input class="boutonV" type="submit" name="valider"value="Valider">
             </form>

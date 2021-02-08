@@ -23,8 +23,8 @@ body {
 	width: 200px;
 }
 
-.Menuderoulant li a:hover {background-color: #0D45E8;}
-.Menuderoulant li a:active {background-color: green;}
+.Menuderoulant li a:hover {background-color: #F5E95D;}
+.Menuderoulant li a:active {background-color: #F5E95D;}
 
 .Menuderoulant li a:link, .Menuderoulant li a:visited {
 	display: block;
@@ -60,7 +60,8 @@ body {
  }
 
  .Menuderoulant .sousmenu li a:hover {
- 	background-color: #199BD2;
+	 background-color: #e4dc87;
+	 color: #293245;
  }
 
  .Menuderoulant li:hover .sousmenu {

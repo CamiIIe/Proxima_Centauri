@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="src/css/bootstrap.min.css"> <!-- CSS BOOTSTRAP -->
         <link rel="stylesheet" href="src/css/style.css">         <!-- CSS PRINCIPAL -->
         <link rel="stylesheet" href="src/css/header_navbar.css"> <!-- CSS HEADER ET SIDENAVBAR -->
+        <link rel="stylesheet" href="src/css/menu_deroulant.css"> <!-- CSS MENU DEROULANT -->
         <!-- CSS -->
 
         <!-- FONT -->
@@ -35,17 +36,17 @@
                 <i class='bx bx-menu' id="header-toggle"></i>
             </div>
 
-            <div class="container-fluid connexion">
-                <!-- <span><a href="#" class = "left">
-                    <button type="button" class="btn btn-light">S'inscrire</button>
-                </a>
-                </span> -->
-                <span><a href="form.php">
-                    <button type="button" class="btn btn-warning"><i class='bx bx-rocket'></i>
-                        Connexion</button>
-                    </a>
-                </span>
-            </div>
+            <ul class="Menuderoulant">
+                <li>
+                    <a href="infos_perso.php">Mon compte</a>
+                        <ul class="sousmenu">
+                            <li><a href="statistiques.html">Statistiques</a></li>
+                            <li><a href="mes_badges.html">Mes badges</a></li>
+                            <li><a href="formPHP.php?deconnexion=1">Deconnexion</a></li>   
+                        </ul>
+                </li>
+              </ul>
+
         </header>
         <!-- HEADER -->
 
@@ -54,7 +55,7 @@
             <nav class="nav">
                 <div>
                     <!-- LOGO / NOM / LIEN DE RETOUR A L'INDEX -->
-                    <a href="index.html" class="nav__logo">
+                    <a href="compte.php" class="nav__logo">
                         <i class='bx bxs-analyse nav__logo-icon'></i>
                         <span class="nav__logo-name">Proxima Centauri</span>
                     </a>
@@ -68,19 +69,19 @@
                         </a>
 
                         <!-- LOGO / NOM / LIEN VERS "CALCUL ASTRONOMIQUE" -->
-                        <a href="#" class="nav__link">
+                        <a href="not_finished.html" class="nav__link">
                             <i class='bx bxs-star-half nav__icon' ></i>
                             <span class="nav__name">Memory Stellaire</span>
                         </a>
                         
                         <!-- LOGO / NOM / LIEN VERS "VISE LA LUNE" -->
-                        <a href="#" class="nav__link">
+                        <a href="not_finished.html" class="nav__link">
                             <i class='bx bxs-moon nav__icon' ></i>
                             <span class="nav__name">Vise la Lune</span>
                         </a>
 
                         <!-- LOGO / NOM / LIEN VERS "PLANETE AUX COULEURS" -->
-                        <a href="#" class="nav__link">
+                        <a href="not_finished.html" class="nav__link">
                             <i class='bx bx-planet nav__icon' ></i>
                             <span class="nav__name">Planète aux Couleurs</span>
                         </a>
@@ -98,7 +99,12 @@
 
         <!-- MAIN -->
         
-        <div class ="container-fluid propos">
+        <div class="container-fluid galaxie">
+            <!-- IMAGE PRINCIPALE : GALAXIE / SCHEMA D'ACCES AUX JEUX -->
+            <img src="src/img/icones/png/titre_galaxie_en_construction_SF.png" class="img-fluid" alt ="">
+        </div>
+
+        <div class ="container-fluid proposNF">
             <!-- Icone A propos : Rocket qui part de la Terre / Accès à la page à propos -->
             <a href="propos.html">
                 <img src = "src/img/icones/png/rocket.png"> 

@@ -126,7 +126,16 @@ li {
 
 .tb{
     background-color: black;
-    
+    margin-left: -30%;
+}
+
+b img {
+    width: 40%;
+    margin-left: 30%;
+}
+
+.grey {
+    background-color: #3a3a3a;
 }
 
 .infos{   
@@ -134,7 +143,9 @@ li {
     margin-top: 10%;
 }
 
-
+.infos img {
+    width: 60%;
+}
 
 
 #jouer {
@@ -170,9 +181,9 @@ li {
 }
 
 /* FOOTER */
-.infos {
+/* .infos {
     display: flex;
     justify-content: center;
-    /*align-items: center;*/
-}
+    align-items: center;
+} */
 

@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
     <!-- HEAD -->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-        <title>Informations Personnelles</title>
+        <title>Proxima Centauri</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="src/css/bootstrap.min.css"> <!-- CSS BOOTSTRAP -->
-        <link rel="stylesheet" href="src/css/infos_perso.css">         <!-- CSS PRINCIPAL -->
+        <link rel="stylesheet" href="src/css/style.css">         <!-- CSS PRINCIPAL -->
         <link rel="stylesheet" href="src/css/header_navbar.css"> <!-- CSS HEADER ET SIDENAVBAR -->
         <!-- CSS -->
 
@@ -36,8 +35,17 @@
                 <i class='bx bx-menu' id="header-toggle"></i>
             </div>
 
-            
-
+            <div class="container-fluid connexion">
+                <!-- <span><a href="#" class = "left">
+                    <button type="button" class="btn btn-light">S'inscrire</button>
+                </a>
+                </span> -->
+                <!-- <span><a href="form.php">
+                    <button type="button" class="btn btn-warning"><i class='bx bx-rocket'></i>
+                        Connexion</button>
+                    </a> 
+                </span> -->
+            </div>
         </header>
         <!-- HEADER -->
 
@@ -60,19 +68,19 @@
                         </a>
 
                         <!-- LOGO / NOM / LIEN VERS "CALCUL ASTRONOMIQUE" -->
-                        <a href="#" class="nav__link">
+                        <a href="not_finished.html" class="nav__link">
                             <i class='bx bxs-star-half nav__icon' ></i>
                             <span class="nav__name">Memory Stellaire</span>
                         </a>
                         
                         <!-- LOGO / NOM / LIEN VERS "VISE LA LUNE" -->
-                        <a href="#" class="nav__link">
+                        <a href="not_finished.html" class="nav__link">
                             <i class='bx bxs-moon nav__icon' ></i>
                             <span class="nav__name">Vise la Lune</span>
                         </a>
 
                         <!-- LOGO / NOM / LIEN VERS "PLANETE AUX COULEURS" -->
-                        <a href="#" class="nav__link">
+                        <a href="not_finished.html" class="nav__link">
                             <i class='bx bx-planet nav__icon' ></i>
                             <span class="nav__name">Planète aux Couleurs</span>
                         </a>
@@ -86,80 +94,24 @@
                 </a>
             </nav>
         </div>
-        <!-- SIDENAVBAR -->         
+        <!-- SIDENAVBAR -->
 
-        <!-- Tableau Info_perso -->
+        <!-- MAIN -->
+        <div class="container-fluid galaxie">
+            <!-- IMAGE PRINCIPALE : GALAXIE / SCHEMA D'ACCES AUX JEUX -->
+            <img src="src/img/icones/png/titre_galaxie_en_construction_SF.png" class="img-fluid" alt ="">
+        </div>
 
+        <div class ="container-fluid proposNF">
+            <!-- Icone A propos : Rocket qui part de la Terre / Accès à la page à propos -->
+            <a href="propos.html">
+                <img src = "src/img/icones/png/rocket.png" class="img-fluid" alt ="">
+            </a>
 
-        <br><br>
-        
-        <!--Titre Informations Personnelles -->
-            <b class="infos">Informations Personnelles</b>
-        <!--Titre Informations Personnelles -->
-        
-        <br> 
-        <div class="Tableau_infos">
-            <table class="table table-bordered  w-50 tb">
-                <tr d-flex>
-                    <th>Profil</th>
-                    <th>Caractéristiques</th>
-                </tr>
-                <tr>
-                    <th>Nom</th>
-                    <th>DUPONT</th>
-                </tr>
-                <tr>
-                    <th>Prénom</th>
-                    <th>Jean</th>
-                </tr>
-                <tr>
-                    <th>Adresse Mail</th>
-                    <th>dj@gmail.com</th>
-                </tr>
-                <tr>
-                    <th>Pseudo</th>
-                    <th>jojo</th>
-                </tr>
-                <tr>
-                    <th>Ville</th>
-                    <th>Tours</th>
-                </tr>
-                <tr>
-                    <th>Niveau</th>
-                    <th>7</th>
-                </tr>
-                <tr>
-                    <th >Nom</th>
-                    <th >DUPONT</th>
-                </tr>
-                <tr>
-                    <th >Prénom</th>
-                    <th >Jean</th>
-                </tr>
-                <tr>
-                    <th >Adresse Mail</th>
-                    <th >dj@gmail.com</th>
-                </tr>
-                <tr>
-                    <th >Pseudo</th>
-                    <th >jojo</th>
-                </tr>
-                <tr>
-                    <th >Ville</th>
-                    <th >Tours</th>
-                </tr>
-                <tr>
-                    <th >Niveau</th>
-                    <th >7</th>
-
-                </tr>
-            </table>
-            
-        </div>  
-        
-        <!-- Tableau Info_perso -->
-
-        
+            <a href="remerciements.html">
+                <img src = "src/img/icones/png/Heart.png" class="img-fluid" alt ="">
+            </a>
+        </div>
 
         <!-- FOOTER -->
         <footer>
@@ -180,7 +132,3 @@
     <!-- BODY // CONTENU DU SITE -->
 
 </html>
-
-
-
-

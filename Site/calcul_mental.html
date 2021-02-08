@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
     <!-- HEAD -->
     <head>
@@ -9,7 +9,7 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="src/css/bootstrap.min.css"> <!-- CSS BOOTSTRAP -->
-        <link rel="stylesheet" href="src/css/style.css">         <!-- CSS PRINCIPAL -->
+        <link rel="stylesheet" href="src/css/calculAstronomique.css">         <!-- CSS PRINCIPAL -->
         <link rel="stylesheet" href="src/css/header_navbar.css"> <!-- CSS HEADER ET SIDENAVBAR -->
         <!-- CSS -->
 
@@ -97,26 +97,45 @@
         <!-- SIDENAVBAR -->
 
         <!-- MAIN -->
+        <div class="container-fluid" id="titreCalcul">
+            <a href="calcul_mental.html">
+                <img src="src/img/icones/png/titre_calcul_SF.png" class="img-fluid rounded mx-auto d-block" alt="">
+            </a>
+        </div>
 
         <div class="container-fluid" id="main">
-            <!--<button class="btn btn-outline-secondary" type="button" id="btn-play" onclick="genere();"">Jouer</button><br/>-->
+            <!--<button class="btn btn-outline-secondary" type="button" id="btn-play" onclick="genere();"">Jouer</button><br/>
+            onkeyup="verif()" autocomplete="off"-->
             <p id="calculastronomique"></p><br/>
-            <input type="number" class="form-control" id="result" name="result" pattern="[0-9]{1,}" 
-            onkeyup="verif()" autocomplete="off" autofocus><br/>
-            <button class="btn btn-outline-secondary" type="button" id="btn-verif" onclick="verif()">En attente</button><br/>
+            <input type="number" class="form-control" id="result" name="result" pattern="[0-9]{1,}" autofocus/><br/>
+            <button class="btn btn-outline-secondary" type="button" id="btn-verif" onclick="verif()">Validez votre réponse</button><br/>
         </div>
 
-        <!-- Liens vers les pages à propos et remerciements -->
-        <div class ="container-fluid propos">
-            <!-- Icone A propos : Rocket qui part de la Terre / Accès à la page à propos -->
-            <a href="propos.html">
-                <img src = "src/img/icones/png/rocket.png" class="img-fluid" alt ="">
-            </a>
+        <div class="container-fluid finPage">
+            <div class="container-fluid regleCalcul">
+                <a href="#">
+                    <img src="src/img/icones/png/Feuille_et_crayon_SF.png" class="img-fluid regle"/>
+                    <span>
+                        <strong class ="underline">Les règles</strong> : <br>
+                        Saisie la réponse à l'expression et clique sur 'Valider la réponse' pour voir si tu as la bonne réponse !<br>
+                        Atteint 10 bonnes réponses consécutives pour passer au niveau supérieur. Au bout de 3 mauvaises réponses, tu descends d'un niveau</span>
+                </a>
+            </div>
 
-            <a href="remerciements.html">
-                <img src = "src/img/icones/png/Heart.png" class="img-fluid" alt ="">
-            </a>
+            <!-- Liens vers les pages à propos et remerciements -->
+            <div class ="container-fluid propos">
+                <!-- Icone A propos : Rocket qui part de la Terre / Accès à la page à propos -->
+                <a href="propos.html">
+                    <img src = "src/img/icones/png/rocket.png" class="img-fluid" alt ="">
+                </a>
+
+                <a href="remerciements.html">
+                    <img src = "src/img/icones/png/Heart.png" class="img-fluid" alt ="">
+                </a>
+            </div>
         </div>
+
+
         <!-- MAIN -->
 
         <!-- FOOTER -->
